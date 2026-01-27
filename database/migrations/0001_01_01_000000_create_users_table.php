@@ -26,7 +26,6 @@ return new class extends Migration
             $table->softDeletes();
 
             $table->index('email', 'idx_email');
-            $table->index('username', 'idx_username');
             $table->index('is_active', 'idx_active');
         });
 
