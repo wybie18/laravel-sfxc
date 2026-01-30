@@ -21,9 +21,6 @@ return new class extends Migration
             $table->date('joined_date');
             $table->date('left_date')->nullable();
 
-            $table->boolean('membership_fee_paid')->default(false);
-            $table->date('payment_date')->nullable();
-
             $table->text('remarks')->nullable();
 
             $table->timestamps();
