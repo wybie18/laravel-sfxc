@@ -17,7 +17,7 @@ use Illuminate\Support\Carbon;
  * @property int $id
  * @property int $faculty_id
  * @property int $specialization_id
- * @property string $proficiency_level
+ * @property bool $is_primary
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
@@ -36,8 +36,20 @@ final class FacultySpecialization extends Model
     protected $fillable = [
         'faculty_id',
         'specialization_id',
-        'proficiency_level',
+        'is_primary',
     ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'is_primary' => 'boolean',
+        ];
+    }
 
     /**
      * Get the faculty member.
